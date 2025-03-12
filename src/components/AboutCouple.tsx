@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Heart } from 'lucide-react';
 import AnimatedTitle from './AnimatedTitle';
@@ -46,13 +45,13 @@ const AboutCouple: React.FC = () => {
           Nossa História
         </AnimatedTitle>
         
-        <div className="elegant-divider">
+        <div className="elegant-divider mb-8">
           <div className="mx-4">
             <Heart size={20} className="divider-icon" />
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div 
               ref={imageRef1}
