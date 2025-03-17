@@ -23,13 +23,13 @@ const Index: React.FC = () => {
         e.preventDefault();
         const href = this.getAttribute('href');
         if (!href) return;
-        
+
         const target = document.querySelector(href);
         if (!target) return;
-        
+
         const yOffset = -80; // Offset for fixed header
         const y = (target as HTMLElement).getBoundingClientRect().top + window.pageYOffset + yOffset;
-        
+
         window.scrollTo({
           top: y,
           behavior: 'smooth'
@@ -59,14 +59,14 @@ const Index: React.FC = () => {
       <WeddingDetails />
       <Gallery />
       <RSVPForm />
-      
+
       <footer className="py-10 text-center bg-wedding-taupe/10">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-cursive text-3xl text-wedding-brown mb-4">
             Gabriel & Yasmin
           </h2>
           <p className="text-wedding-brown/70 mb-6">
-            15 de Junho, 2024
+            09 de Agosto, 2025
           </p>
           <div className="elegant-divider">
             <Heart size={16} className="divider-icon" />

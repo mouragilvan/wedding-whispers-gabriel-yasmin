@@ -23,10 +23,10 @@ const RSVPForm: React.FC = () => {
     dietary: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormState((prev) => ({
@@ -34,17 +34,17 @@ const RSVPForm: React.FC = () => {
       [name]: value
     }));
   };
-  
+
   const handleAttendanceChange = (value: boolean) => {
     setFormState((prev) => ({
       ...prev,
       attending: value
     }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form
     if (!formState.name || !formState.email || formState.attending === null) {
       toast({
@@ -54,9 +54,9 @@ const RSVPForm: React.FC = () => {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -65,7 +65,7 @@ const RSVPForm: React.FC = () => {
         title: "RSVP Enviado!",
         description: "Obrigado por confirmar sua presença.",
       });
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitted(false);
@@ -80,23 +80,23 @@ const RSVPForm: React.FC = () => {
       }, 3000);
     }, 1500);
   };
-  
+  return <></>
   return (
     <section id="rsvp" className="elegant-section bg-wedding-sage/10">
       <div className="max-w-3xl mx-auto">
         <AnimatedTitle className="text-center font-serif text-4xl md:text-5xl mb-4 text-wedding-brown">
           Confirme sua Presença
         </AnimatedTitle>
-        
+
         <div className="elegant-divider">
           <span className="font-cursive text-2xl text-wedding-brown">RSVP</span>
         </div>
-        
+
         <p className="text-center text-wedding-brown/80 mt-6 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          Nós ficaríamos muito felizes com a sua presença neste dia especial. 
+          Nós ficaríamos muito felizes com a sua presença neste dia especial.
           Por favor, confirme até o dia 15 de Maio de 2024.
         </p>
-        
+
         <div className="elegant-card opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           {submitted ? (
             <div className="text-center py-8">
@@ -112,7 +112,7 @@ const RSVPForm: React.FC = () => {
                   <label htmlFor="name" className="block mb-2 font-serif text-wedding-brown">
                     Nome Completo <span className="text-red-500">*</span>
                   </label>
-                  <input 
+                  <input
                     type="text"
                     id="name"
                     name="name"
@@ -122,12 +122,12 @@ const RSVPForm: React.FC = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block mb-2 font-serif text-wedding-brown">
                     Email <span className="text-red-500">*</span>
                   </label>
-                  <input 
+                  <input
                     type="email"
                     id="email"
                     name="email"
@@ -138,7 +138,7 @@ const RSVPForm: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block mb-2 font-serif text-wedding-brown">
                   Você irá comparecer? <span className="text-red-500">*</span>
@@ -149,21 +149,21 @@ const RSVPForm: React.FC = () => {
                     onClick={() => handleAttendanceChange(true)}
                     className={cn(
                       "px-4 py-2 rounded-sm border transition-all",
-                      formState.attending === true 
-                        ? "bg-wedding-taupe text-white border-wedding-taupe" 
+                      formState.attending === true
+                        ? "bg-wedding-taupe text-white border-wedding-taupe"
                         : "bg-white border-wedding-beige hover:border-wedding-taupe"
                     )}
                   >
                     Sim, irei comparecer
                   </button>
-                  
+
                   <button
                     type="button"
                     onClick={() => handleAttendanceChange(false)}
                     className={cn(
                       "px-4 py-2 rounded-sm border transition-all",
-                      formState.attending === false 
-                        ? "bg-wedding-taupe text-white border-wedding-taupe" 
+                      formState.attending === false
+                        ? "bg-wedding-taupe text-white border-wedding-taupe"
                         : "bg-white border-wedding-beige hover:border-wedding-taupe"
                     )}
                   >
@@ -171,14 +171,14 @@ const RSVPForm: React.FC = () => {
                   </button>
                 </div>
               </div>
-              
+
               {formState.attending && (
                 <>
                   <div>
                     <label htmlFor="guests" className="block mb-2 font-serif text-wedding-brown">
                       Número de convidados (incluindo você)
                     </label>
-                    <select 
+                    <select
                       id="guests"
                       name="guests"
                       value={formState.guests}
@@ -191,12 +191,12 @@ const RSVPForm: React.FC = () => {
                       <option value={4}>4 pessoas</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="dietary" className="block mb-2 font-serif text-wedding-brown">
                       Restrições alimentares
                     </label>
-                    <input 
+                    <input
                       type="text"
                       id="dietary"
                       name="dietary"
@@ -208,12 +208,12 @@ const RSVPForm: React.FC = () => {
                   </div>
                 </>
               )}
-              
+
               <div>
                 <label htmlFor="message" className="block mb-2 font-serif text-wedding-brown">
                   Mensagem para os noivos (opcional)
                 </label>
-                <textarea 
+                <textarea
                   id="message"
                   name="message"
                   value={formState.message}
@@ -223,10 +223,10 @@ const RSVPForm: React.FC = () => {
                   placeholder="Sua mensagem de carinho..."
                 />
               </div>
-              
+
               <div className="text-center">
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="elegant-button px-8"
                   disabled={isSubmitting}
                 >
