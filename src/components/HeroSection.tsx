@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
           09 de Agosto, 2025
         </p>
 
-        <button
+        {/* <button
           onClick={() => {
             const element = document.getElementById('rsvp');
             if (element) {
@@ -83,7 +83,7 @@ const HeroSection: React.FC = () => {
           style={{ animationDelay: '1.8s' }}
         >
           Confirme sua presença
-        </button>
+        </button> */}
       </div>
     </section>
   );
