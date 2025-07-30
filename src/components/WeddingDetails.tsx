@@ -39,21 +39,21 @@ const WeddingDetails: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <DetailCard
             title="Data"
-            description="Sábado, 15 de Junho de 2024"
+            description="Sábado, 09 de Agosto de 2025"
             icon={<Calendar className="h-6 w-6 text-wedding-brown" />}
             delay={0.3}
           />
 
           <DetailCard
             title="Local"
-            description="Espaço Villa Garden, Av. das Flores, 123 - São Paulo, SP"
+            description="Assembléia de Deus - ADEB M Norte"
             icon={<MapPin className="h-6 w-6 text-wedding-brown" />}
             delay={0.6}
           />
 
           <DetailCard
             title="Horário"
-            description="Cerimônia às 16h, Recepção às 18h"
+            description="Cerimônia às 19h"
             icon={<Clock className="h-6 w-6 text-wedding-brown" />}
             delay={0.9}
           />
@@ -65,7 +65,7 @@ const WeddingDetails: React.FC = () => {
 
         <div className="mt-20 max-w-3xl mx-auto">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0965565076!2d-46.6325371!3d-23.5613545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59bacf452321%3A0xf69a4d4b7f174d13!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1708274246554!5m2!1spt-BR!2sbr"
+            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d702.2293643136506!2d-48.10715283469142!3d-15.793335537346195!3m2!1i1024!2i768!4f13.1!2m1!1sassembleia%20de%20Deus%20m%20norte%20perto%20da%20escola%2045!5e1!3m2!1spt-BR!2sbr!4v1753904498224!5m2!1spt-BR!2sbr"
             width="100%"
             height="450"
             style={{ border: 0, borderRadius: '0.25rem' }}

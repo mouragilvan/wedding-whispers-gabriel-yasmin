@@ -10,15 +10,15 @@ interface GalleryImage {
 const Gallery: React.FC = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // Sample gallery images
   const images: GalleryImage[] = [
-    { src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', alt: 'Couple by the lake' },
-    { src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027', alt: 'Engagement photo' },
-    { src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07', alt: 'Wedding flowers' },
-    { src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', alt: 'Sunset at the beach' },
-    { src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027', alt: 'Couple portrait' },
-    { src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07', alt: 'Romantic dinner' },
+    { src: 'img1.jpg', alt: 'Couple by the lake' },
+    { src: 'img2.jpg', alt: 'Engagement photo' },
+    { src: 'img3.jpg', alt: 'Wedding flowers' },
+    { src: 'img4.jpg', alt: 'Sunset at the beach' },
+    { src: 'img5.jpg', alt: 'Couple portrait' },
+    { src: 'casal.png', alt: 'Romantic dinner' },
   ];
 
   useEffect(() => {
@@ -51,14 +51,14 @@ const Gallery: React.FC = () => {
         <AnimatedTitle className="text-center font-serif text-4xl md:text-5xl mb-4 text-wedding-brown">
           Nossa Galeria
         </AnimatedTitle>
-        
+
         <div className="elegant-divider">
           <span className="font-cursive text-2xl text-wedding-brown">Memórias</span>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-16">
           {images.map((image, index) => (
-            <div 
+            <div
               key={index}
               onClick={() => setSelectedImage(image)}
               className={`
@@ -67,7 +67,7 @@ const Gallery: React.FC = () => {
                 transform transition-all duration-500 hover:scale-[1.02]
                 opacity-0 ${isVisible ? 'animate-fade-in' : ''}
               `}
-              style={{ 
+              style={{
                 backgroundImage: `url(${image.src}?auto=format&fit=crop&w=800&q=80)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -77,23 +77,23 @@ const Gallery: React.FC = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Lightbox */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-fade-in-slow"
           onClick={() => setSelectedImage(null)}
         >
-          <div 
+          <div
             className="relative max-w-4xl w-full max-h-[90vh] animate-zoom-in"
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
-              src={`${selectedImage.src}?auto=format&fit=crop&w=1600&q=90`} 
+            <img
+              src={`${selectedImage.src}?auto=format&fit=crop&w=1600&q=90`}
               alt={selectedImage.alt}
               className="w-full h-full object-contain rounded-md"
             />
-            <button 
+            <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/40 transition-colors"
               aria-label="Close lightbox"

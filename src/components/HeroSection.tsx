@@ -39,8 +39,8 @@ const HeroSection: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 parallax"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')",
-          transform: `translate(${parallaxPos.x * 20}px, ${parallaxPos.y * 20}px) scale(1.1)`,
+          backgroundImage: "url('casal.png')",
+          transform: `translate(${parallaxPos.x * 20}px, ${parallaxPos.y * 100}px) scale(1.1)`,
         }}
       />
 

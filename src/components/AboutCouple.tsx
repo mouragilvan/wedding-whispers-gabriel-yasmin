@@ -80,7 +80,7 @@ const AboutCouple: React.FC = () => {
               ref={imageRef2}
               className="aspect-[3/4] rounded-md overflow-hidden shadow-lg border border-wedding-beige/20 transform transition-all duration-1000"
               style={{
-                backgroundImage: "url('casal2.png')",
+                backgroundImage: "url('casal3.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 animationDelay: '0.9s',

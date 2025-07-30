@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,15 +31,14 @@ const NavBar: React.FC = () => {
     { id: 'home', label: 'Início' },
     { id: 'couple', label: 'O Casal' },
     { id: 'details', label: 'Detalhes' },
-    { id: 'gallery', label: 'Galeria' },
-    { id: 'rsvp', label: 'RSVP' }
+    { id: 'gallery', label: 'Galeria' }
   ];
 
   return (
     <header className={cn(
       'fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-10',
-      isScrolled 
-        ? 'elegant-blur shadow-sm border-b border-wedding-beige/20' 
+      isScrolled
+        ? 'elegant-blur shadow-sm border-b border-wedding-beige/20'
         : 'bg-transparent'
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -57,11 +56,11 @@ const NavBar: React.FC = () => {
             </button>
           ))}
         </div>
-        
+
         <a href="#home" className="font-cursive text-3xl text-wedding-brown">
           G & Y
         </a>
-        
+
         <div className="hidden md:flex items-center space-x-10">
           {menuItems.slice(3).map(item => (
             <button
@@ -76,22 +75,22 @@ const NavBar: React.FC = () => {
             </button>
           ))}
         </div>
-        
+
         {/* Mobile menu button */}
-        <button 
-          className="md:hidden text-wedding-brown" 
+        <button
+          className="md:hidden text-wedding-brown"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
+
       {/* Mobile menu */}
       <div className={cn(
         'md:hidden fixed inset-x-0 bg-white/95 backdrop-blur-md border-b border-wedding-beige/20 transition-all duration-300 ease-in-out shadow-md',
-        isMenuOpen 
-          ? 'top-[60px] opacity-100' 
+        isMenuOpen
+          ? 'top-[60px] opacity-100'
           : '-top-full opacity-0'
       )}>
         <div className="p-5 space-y-5">
