@@ -33,7 +33,7 @@ const WeddingDetails: React.FC = () => {
         </AnimatedTitle>
 
         <div className="elegant-divider">
-          <span className="font-cursive text-2xl text-wedding-brown">09.08.2024</span>
+          <span className="font-cursive text-2xl text-wedding-brown">❤️</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
